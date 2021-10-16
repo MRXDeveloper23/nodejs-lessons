@@ -7,7 +7,8 @@ async function readFile(path) {
       throw new Error(err);
     }
   });
-  return JSON.parse(data);
+  data = await JSON.parse(data);
+  return data;
 }
 
 async function writeFile(path, data) {
